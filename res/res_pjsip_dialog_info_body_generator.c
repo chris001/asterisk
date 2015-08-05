@@ -133,6 +133,7 @@ static int dialog_info_generate_body_content(void *body, void *data)
 
 	dialog = ast_sip_presence_xml_create_node(state_data->pool, dialog_info, "dialog");
 	ast_sip_presence_xml_create_attr(state_data->pool, dialog, "id", state_data->exten);
+	ast_sip_presence_xml_create_attr(state_data->pool, dialog, "direction", "recipient");
 
 	state = ast_sip_presence_xml_create_node(state_data->pool, dialog, "state");
 	pj_strdup2(state_data->pool, &state->content, statestring);
